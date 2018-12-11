@@ -1,8 +1,18 @@
 class Api::V1::EntriesController < ApplicationController
-  before_action :find_entry, only: [:update]
+  before_action :find_entry, only: [:update, :show, :destroy]
   def index
     @entries = Entry.all
     render json: @entries
+  end
+  # delete index after MVP
+
+  def show
+    render json: @entry, status: :ok
+  end
+
+  def create
+    @entry = Entry.create(entry_params)
+    render json: @entry, status: :created
   end
 
   def update
@@ -14,10 +24,15 @@ class Api::V1::EntriesController < ApplicationController
     end
   end
 
+
+  def destroy
+    @entry.destroy
+  end
+
   private
 
   def entry_params
-    params.permit()
+    params.permit(:entry_id, :title, :body, :photo)
   end
 
   def find_entry

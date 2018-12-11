@@ -1,8 +1,18 @@
 class Api::V1::JournalsController < ApplicationController
-  before_action :find_journal, only: [:update]
+  before_action :find_journal, only: [:update, :show, :destroy]
+
   def index
     @journals = Journal.all
     render json: @journals
+  end
+  # delete index after MVP
+  def show
+    render json: @journal, status: :ok
+  end
+
+  def create
+    @journal = Journal.create(journal_params)
+    render json: @journal, status: :created
   end
 
   def update
@@ -14,10 +24,14 @@ class Api::V1::JournalsController < ApplicationController
     end
   end
 
+  def destroy
+    @journal.destroy
+  end
+
   private
 
   def journal_params
-    params.permit()
+    params.permit(:journal_id, :theme)
   end
 
   def find_journal
