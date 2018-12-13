@@ -4,6 +4,7 @@ Rails.application.routes.draw do
       resources :users
       resources :journals
       resources :entries
+      post '/login', to: 'auth#create'
     end
   end
 end
