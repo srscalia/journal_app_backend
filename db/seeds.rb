@@ -16,7 +16,7 @@ photos = ["https://www.stockvault.net/data/2007/03/01/102413/thumb16.jpg", "http
     first_name: Faker::Name.first_name,
     last_name: Faker::Name.last_name,
     username: Faker::Name.initials,
-    password_digest: Faker::Lorem.word,
+    password: "bob",
     email: Faker::Internet.email,
     phone: Faker::PhoneNumber.cell_phone)
 end
