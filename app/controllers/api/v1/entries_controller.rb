@@ -32,7 +32,7 @@ class Api::V1::EntriesController < ApplicationController
   private
 
   def entry_params
-    params.permit(:journal_id, :title, :body)
+    params.permit(:journal_id, :title, :body, :photo, :location, :date)
   end
 
   def find_entry
