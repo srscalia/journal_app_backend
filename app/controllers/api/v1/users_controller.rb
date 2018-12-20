@@ -8,6 +8,10 @@ class Api::V1::UsersController < ApplicationController
   end
   # delete index after MVP
 
+  def profile
+    render json: { user: UserSerializer.new(current_user) }, status: :accepted
+  end
+
   def show
     render json: @user, status: :ok
   end
