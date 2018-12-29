@@ -51,3 +51,5 @@ gem 'faker'
 gem "jwt", "~> 2.1"
 
 gem 'dotenv-rails', groups: [:development, :test]
+
+gem "figaro"
