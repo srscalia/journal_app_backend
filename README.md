@@ -8,7 +8,7 @@ Users log in or sign up to create account with the app. Users create different t
 
 ## Getting Started
 
-This is the backend repository for this project. To run this app on your local machine you must have the frontend and backend repos. For frontend instructions, see [README.md](https://github.com/srscalia/journal_app_fronten). For backend instructions, see the following:
+This is the backend repository for this project. To run this app on your local machine you must have the frontend and backend repos. For frontend instructions, see [README.md](https://github.com/srscalia/journal_app_frontend). For backend instructions, see the following:
 
 1. Clone this repo down to your local machine. 
 2. In the repository, run `rails db:create && rails db:migrate`. 
